@@ -7,6 +7,7 @@ using Microsoft.IdentityModel.Tokens;
 using Shop.Application.Interfaces;
 using Shop.Infrastructure.Services;
 using Microsoft.OpenApi.Models;
+using Shop.Application.Mappings;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -91,6 +92,8 @@ builder.Services
                             builder.Configuration["Jwt:Key"]!))
             };
     });
+builder.Services.AddAutoMapper(
+    typeof(ProductProfile));
 
 builder.Services.AddScoped<
     IAuthService,
