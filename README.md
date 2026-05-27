@@ -119,13 +119,13 @@ GET /api/orders/my-orders
 ## Clone repository
 
 ```bash
-git clone https://github.com/yourusername/ecommerce-backend-api.git
+git clone https://github.com/TruongLe3012/E-Commerce.git
 ```
 
 ## Open solution
 
 ```bash
-cd ecommerce-backend-api
+cd E-commerce_Api
 ```
 
 ## Update database

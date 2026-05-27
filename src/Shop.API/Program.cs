@@ -108,6 +108,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider
+        .GetRequiredService<AppDbContext>();
+
+    await SeedData.InitializeAsync(context);
+}
+
 
 app.UseHttpsRedirection();
 

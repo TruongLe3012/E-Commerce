@@ -46,5 +46,9 @@ namespace Shop.Infrastructure.Repositories
         {
             await _context.SaveChangesAsync();
         }
+        public IQueryable<T> GetQueryable()
+        {
+            return _dbSet.AsQueryable();
+        }
     }
 }
