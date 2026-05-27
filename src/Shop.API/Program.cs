@@ -93,7 +93,7 @@ builder.Services
             };
     });
 builder.Services.AddAutoMapper(
-    typeof(ProductProfile));
+    typeof(ProductProfile).Assembly);
 
 builder.Services.AddScoped<
     IAuthService,
