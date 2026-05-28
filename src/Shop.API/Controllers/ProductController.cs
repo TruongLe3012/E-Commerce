@@ -5,6 +5,7 @@ using Shop.Application.DTOs.Product;
 using Shop.Application.Interfaces;
 using Shop.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace Shop.API.Controllers
 {
@@ -12,19 +13,27 @@ namespace Shop.API.Controllers
     [Route("api/[controller]")]
     public class ProductsController : ControllerBase
     {
-        private readonly IGenericRepository<Product>
-            _repository;
+        private readonly IGenericRepository<Product> _repository;
 
-        private readonly IMapper _mapper;
+        private readonly IMapper _mapper; 
+        
+        private readonly IMemoryCache _cache;
+
+        private readonly ILogger<ProductsController> _logger;
 
         public ProductsController(
-            IGenericRepository<Product> repository,
-            IMapper mapper)
+        IGenericRepository<Product> repository,
+        IMapper mapper,
+        IMemoryCache cache,
+        ILogger<ProductsController> logger)
         {
             _repository = repository;
             _mapper = mapper;
+            _cache = cache;
+            _logger = logger;
         }
 
+        [HttpGet]
         [HttpGet]
         public async Task<IActionResult> GetAll(
         [FromQuery] int page = 1,
@@ -32,22 +41,31 @@ namespace Shop.API.Controllers
         [FromQuery] string? search = null,
         [FromQuery] int? categoryId = null)
         {
+            var cacheKey =
+                $"products_{page}_{pageSize}_{search}_{categoryId}";
+
+            if (_cache.TryGetValue(
+                cacheKey,
+                out object? cachedProducts))
+            {
+                return Ok(cachedProducts);
+            }
+
             var query =
                 _repository.GetQueryable();
 
             if (!string.IsNullOrWhiteSpace(search))
             {
                 query = query.Where(x =>
-                    EF.Property<string>(x, "Name")
-                        .ToLower()
+                    x.Name.ToLower()
                         .Contains(search.ToLower()));
             }
 
             if (categoryId.HasValue)
             {
                 query = query.Where(x =>
-                    EF.Property<int>(x, "CategoryId")
-                        == categoryId.Value);
+                    x.CategoryId ==
+                    categoryId.Value);
             }
 
             var totalItems =
@@ -63,13 +81,25 @@ namespace Shop.API.Controllers
                 _mapper.Map<IEnumerable<ProductDto>>(
                     products);
 
-            return Ok(new
+            var response = new
             {
                 Page = page,
                 PageSize = pageSize,
                 TotalItems = totalItems,
                 Data = result
-            });
+            };
+
+            var cacheOptions =
+                new MemoryCacheEntryOptions()
+                    .SetAbsoluteExpiration(
+                        TimeSpan.FromMinutes(5));
+
+            _cache.Set(
+                cacheKey,
+                response,
+                cacheOptions);
+
+            return Ok(response);
         }
 
         [HttpGet("{id}")]
@@ -116,6 +146,8 @@ namespace Shop.API.Controllers
 
             if (product == null)
             {
+                _logger.LogWarning(
+                "Not found product");
                 return NotFound();
             }
 
@@ -138,6 +170,8 @@ namespace Shop.API.Controllers
 
             if (product == null)
             {
+                _logger.LogWarning(
+                "Not found product");
                 return NotFound();
             }
 

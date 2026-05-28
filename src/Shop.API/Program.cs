@@ -6,15 +6,30 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Shop.API.Middleware;
 using Shop.Application.Interfaces;
-using Shop.Application.Interfaces;
 using Shop.Application.Mappings;
 using Shop.Application.Validators.Product;
 using Shop.Infrastructure.Data;
 using Shop.Infrastructure.Repositories;
 using Shop.Infrastructure.Services;
 using System.Text;
+using Serilog;
+
+Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Information()
+    .WriteTo.Console()
+    .WriteTo.File(
+        "Logs/log-.txt",
+        rollingInterval:
+            RollingInterval.Day)
+    .CreateLogger();
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Host.UseSerilog();
+
+builder.Services.AddMemoryCache();
+
+builder.Services.AddHostedService<OrderMonitoringService>();
 
 builder.Services.AddControllers();
 
@@ -124,6 +139,8 @@ using (var scope = app.Services.CreateScope())
 
     await SeedData.InitializeAsync(context);
 }
+
+app.UseSerilogRequestLogging();
 
 app.UseMiddleware<ExceptionMiddleware>();
 

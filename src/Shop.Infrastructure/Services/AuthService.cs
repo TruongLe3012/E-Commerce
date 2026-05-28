@@ -67,7 +67,7 @@ namespace Shop.Infrastructure.Services
 
             if (user == null)
             {
-                return null;
+                throw new Exception("User not found");
             }
 
             var isPasswordValid =
@@ -77,7 +77,7 @@ namespace Shop.Infrastructure.Services
 
             if (!isPasswordValid)
             {
-                return null;
+                throw new Exception("Invalid password");
             }
 
             return GenerateJwtToken(user);
