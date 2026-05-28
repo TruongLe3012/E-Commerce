@@ -16,6 +16,8 @@
 
         public Category Category { get; set; } = null!;
 
+        public string? ImageUrl { get; set; }
+
         public ICollection<CartItem> CartItems { get; set; }
             = new List<CartItem>();
 

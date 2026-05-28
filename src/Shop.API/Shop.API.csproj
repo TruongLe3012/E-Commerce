@@ -27,8 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Validators\Auth\" />
-    <Folder Include="Validators\Category\" />
+    <Folder Include="Uploads\" />
   </ItemGroup>
 
 </Project>
