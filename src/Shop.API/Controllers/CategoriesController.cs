@@ -42,12 +42,6 @@ namespace Shop.API.Controllers
         public async Task<IActionResult> Create(
             CreateCategoryDto dto)
         {
-            if (string.IsNullOrWhiteSpace(dto.Name))
-            {
-                return BadRequest(
-                    "Category name is required");
-            }
-
             var category =
                 _mapper.Map<Category>(dto);
 

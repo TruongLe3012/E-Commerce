@@ -95,12 +95,6 @@ namespace Shop.API.Controllers
         public async Task<IActionResult> Create(
             CreateProductDto dto)
         {
-            if (dto.Price < 0)
-            {
-                return BadRequest(
-                    "Price cannot be negative");
-            }
-
             var product =
                 _mapper.Map<Product>(dto);
 

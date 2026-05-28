@@ -1,13 +1,17 @@
-using Microsoft.EntityFrameworkCore;
-using Shop.Infrastructure.Data;
-using Shop.Application.Interfaces;
-using Shop.Infrastructure.Repositories;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using Shop.Application.Interfaces;
-using Shop.Infrastructure.Services;
 using Microsoft.OpenApi.Models;
+using Shop.API.Middleware;
+using Shop.Application.Interfaces;
+using Shop.Application.Interfaces;
 using Shop.Application.Mappings;
+using Shop.Application.Validators.Product;
+using Shop.Infrastructure.Data;
+using Shop.Infrastructure.Repositories;
+using Shop.Infrastructure.Services;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -99,6 +103,11 @@ builder.Services.AddScoped<
     IAuthService,
     AuthService>();
 
+builder.Services.AddFluentValidationAutoValidation();
+
+builder.Services.AddValidatorsFromAssemblyContaining<
+    CreateProductValidator>();
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -116,6 +125,7 @@ using (var scope = app.Services.CreateScope())
     await SeedData.InitializeAsync(context);
 }
 
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseHttpsRedirection();
 
