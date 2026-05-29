@@ -11,6 +11,7 @@ using Shop.Application.Validators.Product;
 using Shop.Infrastructure.Data;
 using Shop.Infrastructure.Repositories;
 using Shop.Infrastructure.Services;
+using System.Diagnostics;
 using System.Text;
 using Serilog;
 
@@ -123,6 +124,18 @@ builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddValidatorsFromAssemblyContaining<
     CreateProductValidator>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend",
+        policy =>
+        {
+            policy
+                .WithOrigins("http://localhost:5173")
+                .AllowAnyHeader()
+                .AllowAnyMethod();
+        });
+});
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -148,10 +161,28 @@ app.UseStaticFiles();
 
 app.UseHttpsRedirection();
 
+app.UseCors("AllowFrontend");
+
 app.UseAuthentication();
 
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.Lifetime.ApplicationStarted.Register(() =>
+{
+    var urls = app.Urls;
+
+    var swaggerUrl = urls.FirstOrDefault();
+
+    if (swaggerUrl != null)
+    {
+        Process.Start(new ProcessStartInfo
+        {
+            FileName = swaggerUrl + "/swagger",
+            UseShellExecute = true
+        });
+    }
+});
 
 app.Run();

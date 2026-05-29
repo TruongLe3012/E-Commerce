@@ -1,151 +1,136 @@
 # E-Commerce Backend API
 
-Production-style E-Commerce Backend API built with ASP.NET Core Web API using Clean Architecture.
+A modern and scalable E-Commerce Backend API built with ASP.NET Core 8 following Clean Architecture principles.
+
+## Tech Stack
+
+* ASP.NET Core 8 Web API
+* Entity Framework Core
+* SQL Server
+* JWT Authentication
+* AutoMapper
+* FluentValidation
+* xUnit
+* FluentAssertions
+* Swagger / OpenAPI
 
 ---
 
 # Features
 
-- JWT Authentication
-- Role-based Authorization
-- Product CRUD
-- Category Management
-- Shopping Cart
-- Order Checkout
-- Pagination / Search / Filter
-- Global Exception Middleware
-- FluentValidation
-- Image Upload
-- Caching
-- Serilog Logging
-- Background Service
-- Unit Testing
-
----
-
-# Tech Stack
-
-- ASP.NET Core Web API
-- Entity Framework Core
-- SQL Server
-- JWT Authentication
-- FluentValidation
-- AutoMapper
-- Serilog
-- xUnit
-- Moq
-- Docker
+* JWT Authentication
+* Role Authorization
+* Product Management
+* Category Management
+* Shopping Cart
+* Checkout System
+* Order Management
+* Order History
+* Admin Order Management
+* Image Upload
+* Global Exception Middleware
+* Background Services
+* Caching
+* Logging
+* Unit Testing
+* Swagger Documentation
 
 ---
 
 # Architecture
 
-```bash
+```text
 src/
- ├── Shop.API
- ├── Shop.Application
- ├── Shop.Domain
- └── Shop.Infrastructure
+│
+├── Shop.API
+├── Shop.Application
+├── Shop.Domain
+└── Shop.Infrastructure
+
+tests/
+└── Shop.Tests
 ```
 
----
+### Clean Architecture Layers
 
-# Database Design
-
-## Entities
-
-- User
-- Product
-- Category
-- CartItem
-- Order
-- OrderItem
-
-## Relationships
-
-- Category -> Products
-- Order -> OrderItems
-- User -> Orders
+| Layer          | Responsibility                   |
+| -------------- | -------------------------------- |
+| API            | Controllers, Middleware, Swagger |
+| Application    | DTOs, Interfaces, Business Logic |
+| Domain         | Entities                         |
+| Infrastructure | Database, Services, Repository   |
 
 ---
 
-# API Endpoints
+# Authentication & Authorization
+
+* JWT Bearer Authentication
+* Role-based Authorization
+* Admin / Customer roles
+* Secure password hashing using BCrypt
+
+---
+
+# Main Modules
 
 ## Authentication
 
-```http
-POST /api/auth/register
-POST /api/auth/login
-```
+* Register
+* Login
+* JWT Token Generation
 
 ## Products
 
-```http
-GET /api/products
-GET /api/products/{id}
-POST /api/products
-PUT /api/products/{id}
-DELETE /api/products/{id}
-```
+* Create Product
+* Update Product
+* Delete Product
+* Get Products
+* Product Image Upload
 
 ## Categories
 
-```http
-GET /api/categories
-POST /api/categories
-PUT /api/categories/{id}
-DELETE /api/categories/{id}
-```
+* CRUD Categories
 
 ## Cart
 
-```http
-POST /api/cart/add
-PUT /api/cart/update
-DELETE /api/cart/remove/{id}
-```
+* Add To Cart
+* Update Quantity
+* Remove Item
 
 ## Orders
 
-```http
-POST /api/orders/checkout
-GET /api/orders/my-orders
-```
+* Checkout
+* My Orders
+* Admin Order Management
+* Update Order Status
 
 ---
 
-# Setup Instructions
+# Unit Testing
 
-## Clone repository
+Implemented unit tests for:
 
-```bash
-git clone https://github.com/TruongLe3012/E-Commerce.git
-```
+* AuthService
+* Business logic validation
+* Login success
+* Wrong password
+* User not found
 
-## Open solution
+### Testing Tools
 
-```bash
-cd E-commerce_Api
-```
-
-## Update database
-
-```bash
-Update-Database
-```
-
-## Run project
-
-```bash
-dotnet run
-```
+* xUnit
+* Moq
+* FluentAssertions
+* EF Core InMemory
 
 ---
 
-# Docker
+# API Documentation
 
-```bash
-docker-compose up --build
+Swagger UI available at:
+
+```text
+https://localhost:7010/swagger
 ```
 
 ---
@@ -154,26 +139,75 @@ docker-compose up --build
 
 ## Swagger UI
 
-Add swagger screenshots here.
+*Add Swagger screenshot here*
 
-## SQL Server
+## SQL Tables
 
-Add database screenshots here.
+*Add SQL Server table screenshot here*
+
+## Product API
+
+*Add product API screenshot here*
+
+## Order API
+
+*Add order API screenshot here*
+
+---
+
+# Database
+
+## Main Tables
+
+* Users
+* Products
+* Categories
+* CartItems
+* Orders
+* OrderItems
+
+---
+
+# Getting Started
+
+## Clone Project
+
+```bash
+git clone https://github.com/TruongLe3012/E-Commerce.git
+```
+
+## Restore Packages
+
+```bash
+dotnet restore
+```
+
+## Update Database
+
+```bash
+dotnet ef database update
+```
+
+## Run Project
+
+```bash
+dotnet run
+```
 
 ---
 
 # Future Improvements
 
-- Refresh Token
-- Redis Cache
-- CQRS + MediatR
-- Email Service
-- Soft Delete
-- Audit Logging
-- CI/CD GitHub Actions
+* Refresh Token
+* Payment Integration
+* Email Service
+* Docker Support
+* CI/CD Pipeline
+* Redis Cache
+* Frontend Integration
 
 ---
 
 # Author
 
-Truong Le
+Developed by Trường Lê

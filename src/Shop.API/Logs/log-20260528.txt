@@ -33,3 +33,78 @@ WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0
 SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
 FROM [Orders] AS [o]
 WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-28 16:28:36.034 +07:00 [INF] Executed DbCommand (56ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-05-28 16:28:36.558 +07:00 [INF] User profile is available. Using 'C:\Users\Truong\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-28 16:28:36.596 +07:00 [INF] Background service running at: "2026-05-28T09:28:36.5918426Z"
+2026-05-28 16:28:36.810 +07:00 [WRN] The WebRootPath was not found: E:\Study4w\E-Commerce_Api\src\Shop.API\wwwroot. Static files may be unavailable.
+2026-05-28 16:28:37.177 +07:00 [INF] Executed DbCommand (149ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-28 16:28:37.198 +07:00 [INF] Now listening on: https://localhost:7010
+2026-05-28 16:28:37.200 +07:00 [INF] Now listening on: http://localhost:5141
+2026-05-28 16:28:37.396 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-28 16:28:37.397 +07:00 [INF] Hosting environment: Development
+2026-05-28 16:28:37.398 +07:00 [INF] Content root path: E:\Study4w\E-Commerce_Api\src\Shop.API
+2026-05-28 16:28:51.705 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/_vs/browserLink - null null
+2026-05-28 16:28:51.705 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-28 16:28:51.838 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/_framework/aspnetcore-browser-refresh.js - 200 14921 application/javascript; charset=utf-8 137.077ms
+2026-05-28 16:28:52.160 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/_vs/browserLink - 200 null text/javascript; charset=UTF-8 476.3177ms
+2026-05-28 16:28:52.474 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/swagger/v1/swagger.json - null null
+2026-05-28 16:28:52.772 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 298.4694ms
+2026-05-28 16:29:07.218 +07:00 [INF] Background service running at: "2026-05-28T09:29:07.2180576Z"
+2026-05-28 16:29:07.283 +07:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-28 16:49:12.378 +07:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-05-28 16:49:12.562 +07:00 [INF] User profile is available. Using 'C:\Users\Truong\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-28 16:49:12.576 +07:00 [INF] Background service running at: "2026-05-28T09:49:12.5744479Z"
+2026-05-28 16:49:12.628 +07:00 [WRN] The WebRootPath was not found: E:\Study4w\E-Commerce_Api\src\Shop.API\wwwroot. Static files may be unavailable.
+2026-05-28 16:49:12.717 +07:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-28 16:49:12.742 +07:00 [INF] Now listening on: https://localhost:7010
+2026-05-28 16:49:12.743 +07:00 [INF] Now listening on: http://localhost:5141
+2026-05-28 16:49:12.813 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-28 16:49:12.814 +07:00 [INF] Hosting environment: Development
+2026-05-28 16:49:12.815 +07:00 [INF] Content root path: E:\Study4w\E-Commerce_Api\src\Shop.API
+2026-05-28 16:49:13.128 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-28 16:49:13.128 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/_vs/browserLink - null null
+2026-05-28 16:49:13.157 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/_framework/aspnetcore-browser-refresh.js - 200 14921 application/javascript; charset=utf-8 34.584ms
+2026-05-28 16:49:13.200 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/_vs/browserLink - 200 null text/javascript; charset=UTF-8 83.2228ms
+2026-05-28 16:49:13.435 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/swagger/v1/swagger.json - null null
+2026-05-28 16:49:13.479 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 43.9812ms
+2026-05-28 16:49:42.753 +07:00 [INF] Background service running at: "2026-05-28T09:49:42.7530830Z"
+2026-05-28 16:49:42.799 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-28 16:50:12.808 +07:00 [INF] Background service running at: "2026-05-28T09:50:12.8080519Z"
+2026-05-28 16:50:12.818 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-28 16:50:42.816 +07:00 [INF] Background service running at: "2026-05-28T09:50:42.8167139Z"
+2026-05-28 16:50:42.822 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-28 16:51:12.831 +07:00 [INF] Background service running at: "2026-05-28T09:51:12.8311682Z"
+2026-05-28 16:51:12.841 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
