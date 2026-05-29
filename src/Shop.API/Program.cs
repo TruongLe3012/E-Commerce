@@ -146,6 +146,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseSerilogRequestLogging();
+
+app.UseMiddleware<ExceptionMiddleware>();
+
+app.UseStaticFiles();
+
 app.UseStaticFiles(new StaticFileOptions
 {
     FileProvider = new PhysicalFileProvider(
@@ -154,12 +160,6 @@ app.UseStaticFiles(new StaticFileOptions
             "Uploads")),
     RequestPath = "/Uploads"
 });
-
-app.UseSerilogRequestLogging();
-
-app.UseMiddleware<ExceptionMiddleware>();
-
-app.UseStaticFiles();
 
 app.UseHttpsRedirection();
 

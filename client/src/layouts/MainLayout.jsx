@@ -23,6 +23,7 @@ function MainLayout({ children }) {
           <>
             <a href="/profile">Profile</a>
             <a href="/products">Products</a>
+            <a href="/cart">Cart</a>
 
             <button onClick={handleLogout}>
               Logout

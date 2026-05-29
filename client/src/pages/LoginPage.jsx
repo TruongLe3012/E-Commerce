@@ -15,22 +15,24 @@ function LoginPage() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    try {
-      const response = await login(formData);
+  try {
+    const response = await login(formData);
 
-      console.log(response);
+    console.log("LOGIN RESPONSE:", response);
 
-      localStorage.setItem("token", response.token);
+    localStorage.setItem("token", response);
 
-      alert("Login success");
-    } catch (error) {
-      console.log(error);
+    alert("Login success");
 
-      alert("Login failed");
-    }
-  };
+    window.location.href = "/";
+  } catch (error) {
+    console.log(error);
+
+    alert("Login failed");
+  }
+};
 
   return (
     <div className="max-w-md mx-auto mt-10">

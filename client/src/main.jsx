@@ -4,11 +4,18 @@ import { BrowserRouter } from "react-router-dom";
 
 import "./index.css";
 import AppRoutes from "./routes/AppRoutes";
+import CartProvider from "./context/CartContext";
+
+import { Toaster } from "react-hot-toast";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <AppRoutes />
-    </BrowserRouter>
+    <CartProvider>
+      <BrowserRouter>
+        <AppRoutes />
+
+        <Toaster position="top-right" />
+      </BrowserRouter>
+    </CartProvider>
   </React.StrictMode>
 );
