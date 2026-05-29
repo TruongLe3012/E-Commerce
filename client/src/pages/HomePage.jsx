@@ -22,6 +22,7 @@ function HomePage() {
         Home Page
       </h1>
     </div>
+    
   );
 }
 

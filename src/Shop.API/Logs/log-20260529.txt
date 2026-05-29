@@ -389,3 +389,843 @@ WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0
 2026-05-29 14:54:24.484 +07:00 [INF] Executed endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
 2026-05-29 14:54:24.486 +07:00 [INF] HTTP GET /api/products responded 200 in 18.1289 ms
 2026-05-29 14:54:24.488 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/api/products - 200 null application/json; charset=utf-8 23.8926ms
+2026-05-29 14:58:35.551 +07:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-05-29 14:58:35.712 +07:00 [INF] User profile is available. Using 'C:\Users\Truong\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-29 14:58:35.726 +07:00 [INF] Background service running at: "2026-05-29T07:58:35.7237031Z"
+2026-05-29 14:58:35.785 +07:00 [WRN] The WebRootPath was not found: E:\Study4w\E-Commerce_Api\src\Shop.API\wwwroot. Static files may be unavailable.
+2026-05-29 14:58:35.914 +07:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 14:58:35.941 +07:00 [INF] Now listening on: https://localhost:7010
+2026-05-29 14:58:35.942 +07:00 [INF] Now listening on: http://localhost:5141
+2026-05-29 14:58:36.020 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-29 14:58:36.021 +07:00 [INF] Hosting environment: Development
+2026-05-29 14:58:36.022 +07:00 [INF] Content root path: E:\Study4w\E-Commerce_Api\src\Shop.API
+2026-05-29 14:58:36.277 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-29 14:58:36.277 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/_vs/browserLink - null null
+2026-05-29 14:58:36.306 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/_framework/aspnetcore-browser-refresh.js - 200 14921 application/javascript; charset=utf-8 37.5553ms
+2026-05-29 14:58:36.351 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/_vs/browserLink - 200 null text/javascript; charset=UTF-8 84.2959ms
+2026-05-29 14:58:36.589 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/swagger/v1/swagger.json - null null
+2026-05-29 14:58:36.635 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 46.584ms
+2026-05-29 14:59:00.433 +07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7010/api/auth/login - null null
+2026-05-29 14:59:00.447 +07:00 [INF] CORS policy execution successful.
+2026-05-29 14:59:00.451 +07:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 5.9909 ms
+2026-05-29 14:59:00.453 +07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7010/api/auth/login - 204 null null 20.4215ms
+2026-05-29 14:59:00.456 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7010/api/auth/login - application/json 48
+2026-05-29 14:59:00.461 +07:00 [INF] CORS policy execution successful.
+2026-05-29 14:59:00.511 +07:00 [INF] Executing endpoint 'Shop.API.Controllers.AuthController.Login (Shop.API)'
+2026-05-29 14:59:00.532 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Shop.Application.DTOs.Auth.LoginDto) on controller Shop.API.Controllers.AuthController (Shop.API).
+2026-05-29 14:59:00.667 +07:00 [INF] Executed DbCommand (22ms) [Parameters=[@__dto_Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[FullName], [u].[PasswordHash], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-05-29 14:59:01.025 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2026-05-29 14:59:01.029 +07:00 [INF] Executed action Shop.API.Controllers.AuthController.Login (Shop.API) in 493.0365ms
+2026-05-29 14:59:01.031 +07:00 [INF] Executed endpoint 'Shop.API.Controllers.AuthController.Login (Shop.API)'
+2026-05-29 14:59:01.032 +07:00 [INF] HTTP POST /api/auth/login responded 200 in 571.9137 ms
+2026-05-29 14:59:01.038 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7010/api/auth/login - 200 null text/plain; charset=utf-8 581.9789ms
+2026-05-29 14:59:05.955 +07:00 [INF] Background service running at: "2026-05-29T07:59:05.9556836Z"
+2026-05-29 14:59:05.963 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 14:59:35.965 +07:00 [INF] Background service running at: "2026-05-29T07:59:35.9649996Z"
+2026-05-29 14:59:35.970 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:00:05.981 +07:00 [INF] Background service running at: "2026-05-29T08:00:05.9817392Z"
+2026-05-29 15:00:05.986 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:00:35.997 +07:00 [INF] Background service running at: "2026-05-29T08:00:35.9971981Z"
+2026-05-29 15:00:36.005 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:01:06.017 +07:00 [INF] Background service running at: "2026-05-29T08:01:06.0176539Z"
+2026-05-29 15:01:06.020 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:01:36.030 +07:00 [INF] Background service running at: "2026-05-29T08:01:36.0302164Z"
+2026-05-29 15:01:36.036 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:02:06.039 +07:00 [INF] Background service running at: "2026-05-29T08:02:06.0395137Z"
+2026-05-29 15:02:06.042 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:02:36.058 +07:00 [INF] Background service running at: "2026-05-29T08:02:36.0580780Z"
+2026-05-29 15:02:36.063 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:03:06.064 +07:00 [INF] Background service running at: "2026-05-29T08:03:06.0646378Z"
+2026-05-29 15:03:06.070 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:03:36.083 +07:00 [INF] Background service running at: "2026-05-29T08:03:36.0836648Z"
+2026-05-29 15:03:36.086 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:03:47.436 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/api/products - null null
+2026-05-29 15:03:47.448 +07:00 [INF] CORS policy execution successful.
+2026-05-29 15:03:47.451 +07:00 [INF] Executing endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:03:47.467 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.String, System.Nullable`1[System.Int32]) on controller Shop.API.Controllers.ProductsController (Shop.API).
+2026-05-29 15:03:47.642 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+2026-05-29 15:03:47.648 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-05-29 15:03:47.649 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-05-29 15:03:47.658 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[Description], [p].[ImageUrl], [p].[Name], [p].[Price], [p].[Stock]
+FROM [Products] AS [p]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2026-05-29 15:03:47.690 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[Shop.Application.DTOs.Product.ProductDto, Shop.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-29 15:03:47.702 +07:00 [INF] Executed action Shop.API.Controllers.ProductsController.GetAll (Shop.API) in 231.8353ms
+2026-05-29 15:03:47.704 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/api/products - null null
+2026-05-29 15:03:47.704 +07:00 [INF] Executed endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:03:47.711 +07:00 [INF] CORS policy execution successful.
+2026-05-29 15:03:47.712 +07:00 [INF] HTTP GET /api/products responded 200 in 264.1864 ms
+2026-05-29 15:03:47.714 +07:00 [INF] Executing endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:03:47.714 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/api/products - 200 null application/json; charset=utf-8 277.8503ms
+2026-05-29 15:03:47.715 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.String, System.Nullable`1[System.Int32]) on controller Shop.API.Controllers.ProductsController (Shop.API).
+2026-05-29 15:03:47.721 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[Shop.Application.DTOs.Product.ProductDto, Shop.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-29 15:03:47.723 +07:00 [INF] Executed action Shop.API.Controllers.ProductsController.GetAll (Shop.API) in 3.885ms
+2026-05-29 15:03:47.725 +07:00 [INF] Executed endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:03:47.726 +07:00 [INF] HTTP GET /api/products responded 200 in 14.3544 ms
+2026-05-29 15:03:47.727 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/api/products - 200 null application/json; charset=utf-8 23.7283ms
+2026-05-29 15:03:57.561 +07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7010/api/auth/login - null null
+2026-05-29 15:03:57.564 +07:00 [INF] CORS policy execution successful.
+2026-05-29 15:03:57.564 +07:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 0.8625 ms
+2026-05-29 15:03:57.566 +07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7010/api/auth/login - 204 null null 4.6226ms
+2026-05-29 15:03:57.569 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7010/api/auth/login - application/json 48
+2026-05-29 15:03:57.570 +07:00 [INF] CORS policy execution successful.
+2026-05-29 15:03:57.571 +07:00 [INF] Executing endpoint 'Shop.API.Controllers.AuthController.Login (Shop.API)'
+2026-05-29 15:03:57.572 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Shop.Application.DTOs.Auth.LoginDto) on controller Shop.API.Controllers.AuthController (Shop.API).
+2026-05-29 15:03:57.578 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__dto_Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[FullName], [u].[PasswordHash], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-05-29 15:03:57.799 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2026-05-29 15:03:57.800 +07:00 [INF] Executed action Shop.API.Controllers.AuthController.Login (Shop.API) in 227.6241ms
+2026-05-29 15:03:57.802 +07:00 [INF] Executed endpoint 'Shop.API.Controllers.AuthController.Login (Shop.API)'
+2026-05-29 15:03:57.803 +07:00 [INF] HTTP POST /api/auth/login responded 200 in 232.4366 ms
+2026-05-29 15:03:57.804 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7010/api/auth/login - 200 null text/plain; charset=utf-8 236.0801ms
+2026-05-29 15:04:06.098 +07:00 [INF] Background service running at: "2026-05-29T08:04:06.0976733Z"
+2026-05-29 15:04:06.109 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:04:36.121 +07:00 [INF] Background service running at: "2026-05-29T08:04:36.1215053Z"
+2026-05-29 15:04:36.129 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:05:06.141 +07:00 [INF] Background service running at: "2026-05-29T08:05:06.1417803Z"
+2026-05-29 15:05:06.147 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:05:36.153 +07:00 [INF] Background service running at: "2026-05-29T08:05:36.1539486Z"
+2026-05-29 15:05:36.157 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:05:36.417 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/api/products - null null
+2026-05-29 15:05:36.425 +07:00 [INF] CORS policy execution successful.
+2026-05-29 15:05:36.426 +07:00 [INF] Executing endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:05:36.427 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.String, System.Nullable`1[System.Int32]) on controller Shop.API.Controllers.ProductsController (Shop.API).
+2026-05-29 15:05:36.430 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[Shop.Application.DTOs.Product.ProductDto, Shop.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-29 15:05:36.432 +07:00 [INF] Executed action Shop.API.Controllers.ProductsController.GetAll (Shop.API) in 3.5332ms
+2026-05-29 15:05:36.433 +07:00 [INF] Executed endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:05:36.434 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/api/products - null null
+2026-05-29 15:05:36.435 +07:00 [INF] HTTP GET /api/products responded 200 in 9.8373 ms
+2026-05-29 15:05:36.436 +07:00 [INF] CORS policy execution successful.
+2026-05-29 15:05:36.437 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/api/products - 200 null application/json; charset=utf-8 20.697ms
+2026-05-29 15:05:36.438 +07:00 [INF] Executing endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:05:36.445 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.String, System.Nullable`1[System.Int32]) on controller Shop.API.Controllers.ProductsController (Shop.API).
+2026-05-29 15:05:36.446 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[Shop.Application.DTOs.Product.ProductDto, Shop.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-29 15:05:36.448 +07:00 [INF] Executed action Shop.API.Controllers.ProductsController.GetAll (Shop.API) in 1.6518ms
+2026-05-29 15:05:36.449 +07:00 [INF] Executed endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:05:36.449 +07:00 [INF] HTTP GET /api/products responded 200 in 13.0533 ms
+2026-05-29 15:05:36.450 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/api/products - 200 null application/json; charset=utf-8 16.7213ms
+2026-05-29 15:06:06.167 +07:00 [INF] Background service running at: "2026-05-29T08:06:06.1670015Z"
+2026-05-29 15:06:06.176 +07:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:06:36.187 +07:00 [INF] Background service running at: "2026-05-29T08:06:36.1877672Z"
+2026-05-29 15:06:36.191 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:06:56.881 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/api/products - null null
+2026-05-29 15:06:56.889 +07:00 [INF] CORS policy execution successful.
+2026-05-29 15:06:56.890 +07:00 [INF] Executing endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:06:56.891 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.String, System.Nullable`1[System.Int32]) on controller Shop.API.Controllers.ProductsController (Shop.API).
+2026-05-29 15:06:56.895 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[Shop.Application.DTOs.Product.ProductDto, Shop.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-29 15:06:56.896 +07:00 [INF] Executed action Shop.API.Controllers.ProductsController.GetAll (Shop.API) in 2.4741ms
+2026-05-29 15:06:56.898 +07:00 [INF] Executed endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:06:56.899 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/api/products - null null
+2026-05-29 15:06:56.900 +07:00 [INF] HTTP GET /api/products responded 200 in 10.7314 ms
+2026-05-29 15:06:56.905 +07:00 [INF] CORS policy execution successful.
+2026-05-29 15:06:56.906 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/api/products - 200 null application/json; charset=utf-8 25.5956ms
+2026-05-29 15:06:56.907 +07:00 [INF] Executing endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:06:56.910 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.String, System.Nullable`1[System.Int32]) on controller Shop.API.Controllers.ProductsController (Shop.API).
+2026-05-29 15:06:56.911 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[Shop.Application.DTOs.Product.ProductDto, Shop.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-29 15:06:56.912 +07:00 [INF] Executed action Shop.API.Controllers.ProductsController.GetAll (Shop.API) in 1.6385ms
+2026-05-29 15:06:56.913 +07:00 [INF] Executed endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:06:56.914 +07:00 [INF] HTTP GET /api/products responded 200 in 8.2611 ms
+2026-05-29 15:06:56.915 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/api/products - 200 null application/json; charset=utf-8 16.8305ms
+2026-05-29 15:07:06.207 +07:00 [INF] Background service running at: "2026-05-29T08:07:06.2072806Z"
+2026-05-29 15:07:06.213 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:07:36.229 +07:00 [INF] Background service running at: "2026-05-29T08:07:36.2292317Z"
+2026-05-29 15:07:36.232 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:08:04.065 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/api/products - null null
+2026-05-29 15:08:04.073 +07:00 [INF] CORS policy execution successful.
+2026-05-29 15:08:04.074 +07:00 [INF] Executing endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:08:04.075 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.String, System.Nullable`1[System.Int32]) on controller Shop.API.Controllers.ProductsController (Shop.API).
+2026-05-29 15:08:04.078 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[Shop.Application.DTOs.Product.ProductDto, Shop.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-29 15:08:04.080 +07:00 [INF] Executed action Shop.API.Controllers.ProductsController.GetAll (Shop.API) in 2.7394ms
+2026-05-29 15:08:04.081 +07:00 [INF] Executed endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:08:04.081 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/api/products - null null
+2026-05-29 15:08:04.087 +07:00 [INF] HTTP GET /api/products responded 200 in 13.3274 ms
+2026-05-29 15:08:04.089 +07:00 [INF] CORS policy execution successful.
+2026-05-29 15:08:04.090 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/api/products - 200 null application/json; charset=utf-8 25.5747ms
+2026-05-29 15:08:04.092 +07:00 [INF] Executing endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:08:04.095 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.String, System.Nullable`1[System.Int32]) on controller Shop.API.Controllers.ProductsController (Shop.API).
+2026-05-29 15:08:04.096 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[Shop.Application.DTOs.Product.ProductDto, Shop.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-29 15:08:04.098 +07:00 [INF] Executed action Shop.API.Controllers.ProductsController.GetAll (Shop.API) in 2.3351ms
+2026-05-29 15:08:04.099 +07:00 [INF] Executed endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:08:04.100 +07:00 [INF] HTTP GET /api/products responded 200 in 11.1941 ms
+2026-05-29 15:08:04.101 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/api/products - 200 null application/json; charset=utf-8 20.3243ms
+2026-05-29 15:08:06.236 +07:00 [INF] Background service running at: "2026-05-29T08:08:06.2361104Z"
+2026-05-29 15:08:06.241 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:08:16.754 +07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7010/api/auth/login - null null
+2026-05-29 15:08:16.756 +07:00 [INF] CORS policy execution successful.
+2026-05-29 15:08:16.757 +07:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 0.8130 ms
+2026-05-29 15:08:16.759 +07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7010/api/auth/login - 204 null null 4.587ms
+2026-05-29 15:08:16.761 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7010/api/auth/login - application/json 48
+2026-05-29 15:08:16.763 +07:00 [INF] CORS policy execution successful.
+2026-05-29 15:08:16.763 +07:00 [INF] Executing endpoint 'Shop.API.Controllers.AuthController.Login (Shop.API)'
+2026-05-29 15:08:16.764 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Shop.Application.DTOs.Auth.LoginDto) on controller Shop.API.Controllers.AuthController (Shop.API).
+2026-05-29 15:08:16.771 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__dto_Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[FullName], [u].[PasswordHash], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-05-29 15:08:16.903 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2026-05-29 15:08:16.905 +07:00 [INF] Executed action Shop.API.Controllers.AuthController.Login (Shop.API) in 139.6909ms
+2026-05-29 15:08:16.906 +07:00 [INF] Executed endpoint 'Shop.API.Controllers.AuthController.Login (Shop.API)'
+2026-05-29 15:08:16.907 +07:00 [INF] HTTP POST /api/auth/login responded 200 in 144.0056 ms
+2026-05-29 15:08:16.908 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7010/api/auth/login - 200 null text/plain; charset=utf-8 147.6052ms
+2026-05-29 15:08:19.605 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/api/products - null null
+2026-05-29 15:08:19.607 +07:00 [INF] CORS policy execution successful.
+2026-05-29 15:08:19.608 +07:00 [INF] Executing endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:08:19.609 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.String, System.Nullable`1[System.Int32]) on controller Shop.API.Controllers.ProductsController (Shop.API).
+2026-05-29 15:08:19.612 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[Shop.Application.DTOs.Product.ProductDto, Shop.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-29 15:08:19.613 +07:00 [INF] Executed action Shop.API.Controllers.ProductsController.GetAll (Shop.API) in 2.8121ms
+2026-05-29 15:08:19.614 +07:00 [INF] Executed endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:08:19.615 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/api/products - null null
+2026-05-29 15:08:19.616 +07:00 [INF] HTTP GET /api/products responded 200 in 8.5479 ms
+2026-05-29 15:08:19.618 +07:00 [INF] CORS policy execution successful.
+2026-05-29 15:08:19.619 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/api/products - 200 null application/json; charset=utf-8 15.0759ms
+2026-05-29 15:08:19.620 +07:00 [INF] Executing endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:08:19.623 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.String, System.Nullable`1[System.Int32]) on controller Shop.API.Controllers.ProductsController (Shop.API).
+2026-05-29 15:08:19.626 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[Shop.Application.DTOs.Product.ProductDto, Shop.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-29 15:08:19.627 +07:00 [INF] Executed action Shop.API.Controllers.ProductsController.GetAll (Shop.API) in 2.5449ms
+2026-05-29 15:08:19.628 +07:00 [INF] Executed endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:08:19.629 +07:00 [INF] HTTP GET /api/products responded 200 in 11.5677 ms
+2026-05-29 15:08:19.631 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/api/products - 200 null application/json; charset=utf-8 16.8598ms
+2026-05-29 15:08:36.254 +07:00 [INF] Background service running at: "2026-05-29T08:08:36.2546878Z"
+2026-05-29 15:08:36.259 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:09:06.269 +07:00 [INF] Background service running at: "2026-05-29T08:09:06.2691576Z"
+2026-05-29 15:09:06.271 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:09:22.693 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/api/products - null null
+2026-05-29 15:09:22.696 +07:00 [INF] CORS policy execution successful.
+2026-05-29 15:09:22.697 +07:00 [INF] Executing endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:09:22.699 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.String, System.Nullable`1[System.Int32]) on controller Shop.API.Controllers.ProductsController (Shop.API).
+2026-05-29 15:09:22.706 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+2026-05-29 15:09:22.712 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[Description], [p].[ImageUrl], [p].[Name], [p].[Price], [p].[Stock]
+FROM [Products] AS [p]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2026-05-29 15:09:22.716 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[Shop.Application.DTOs.Product.ProductDto, Shop.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-29 15:09:22.718 +07:00 [INF] Executed action Shop.API.Controllers.ProductsController.GetAll (Shop.API) in 18.1077ms
+2026-05-29 15:09:22.720 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/api/products - null null
+2026-05-29 15:09:22.720 +07:00 [INF] Executed endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:09:22.729 +07:00 [INF] CORS policy execution successful.
+2026-05-29 15:09:22.729 +07:00 [INF] HTTP GET /api/products responded 200 in 33.3069 ms
+2026-05-29 15:09:22.730 +07:00 [INF] Executing endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:09:22.732 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/api/products - 200 null application/json; charset=utf-8 39.5487ms
+2026-05-29 15:09:22.733 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.String, System.Nullable`1[System.Int32]) on controller Shop.API.Controllers.ProductsController (Shop.API).
+2026-05-29 15:09:22.739 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[Shop.Application.DTOs.Product.ProductDto, Shop.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-29 15:09:22.740 +07:00 [INF] Executed action Shop.API.Controllers.ProductsController.GetAll (Shop.API) in 2.7138ms
+2026-05-29 15:09:22.741 +07:00 [INF] Executed endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:09:22.742 +07:00 [INF] HTTP GET /api/products responded 200 in 13.7261 ms
+2026-05-29 15:09:22.744 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/api/products - 200 null application/json; charset=utf-8 23.6512ms
+2026-05-29 15:09:36.282 +07:00 [INF] Background service running at: "2026-05-29T08:09:36.2829359Z"
+2026-05-29 15:09:36.288 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:10:06.304 +07:00 [INF] Background service running at: "2026-05-29T08:10:06.3047584Z"
+2026-05-29 15:10:06.307 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:10:36.322 +07:00 [INF] Background service running at: "2026-05-29T08:10:36.3221101Z"
+2026-05-29 15:10:36.327 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:11:06.341 +07:00 [INF] Background service running at: "2026-05-29T08:11:06.3414459Z"
+2026-05-29 15:11:06.343 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:11:36.356 +07:00 [INF] Background service running at: "2026-05-29T08:11:36.3566825Z"
+2026-05-29 15:11:36.362 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:12:06.371 +07:00 [INF] Background service running at: "2026-05-29T08:12:06.3718176Z"
+2026-05-29 15:12:06.374 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:12:36.389 +07:00 [INF] Background service running at: "2026-05-29T08:12:36.3896513Z"
+2026-05-29 15:12:36.394 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:13:06.405 +07:00 [INF] Background service running at: "2026-05-29T08:13:06.4056317Z"
+2026-05-29 15:13:06.409 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:13:36.414 +07:00 [INF] Background service running at: "2026-05-29T08:13:36.4144472Z"
+2026-05-29 15:13:36.419 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:14:06.422 +07:00 [INF] Background service running at: "2026-05-29T08:14:06.4228085Z"
+2026-05-29 15:14:06.425 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:14:36.427 +07:00 [INF] Background service running at: "2026-05-29T08:14:36.4277856Z"
+2026-05-29 15:14:36.432 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:15:06.443 +07:00 [INF] Background service running at: "2026-05-29T08:15:06.4434981Z"
+2026-05-29 15:15:06.447 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:15:36.454 +07:00 [INF] Background service running at: "2026-05-29T08:15:36.4542957Z"
+2026-05-29 15:15:36.456 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:16:04.890 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/api/products?page=1&pageSize=8&search= - null null
+2026-05-29 15:16:04.897 +07:00 [INF] CORS policy execution successful.
+2026-05-29 15:16:04.898 +07:00 [INF] Executing endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:16:04.899 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.String, System.Nullable`1[System.Int32]) on controller Shop.API.Controllers.ProductsController (Shop.API).
+2026-05-29 15:16:04.911 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+2026-05-29 15:16:04.915 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[Description], [p].[ImageUrl], [p].[Name], [p].[Price], [p].[Stock]
+FROM [Products] AS [p]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2026-05-29 15:16:04.918 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[Shop.Application.DTOs.Product.ProductDto, Shop.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-29 15:16:04.919 +07:00 [INF] Executed action Shop.API.Controllers.ProductsController.GetAll (Shop.API) in 18.26ms
+2026-05-29 15:16:04.920 +07:00 [INF] Executed endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:16:04.921 +07:00 [INF] HTTP GET /api/products responded 200 in 23.2434 ms
+2026-05-29 15:16:04.921 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/api/products?page=1&pageSize=8&search= - 200 null application/json; charset=utf-8 31.5223ms
+2026-05-29 15:16:06.460 +07:00 [INF] Background service running at: "2026-05-29T08:16:06.4601663Z"
+2026-05-29 15:16:06.463 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:16:36.475 +07:00 [INF] Background service running at: "2026-05-29T08:16:36.4754215Z"
+2026-05-29 15:16:36.478 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:16:37.996 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/api/products?page=1&pageSize=8&search= - null null
+2026-05-29 15:16:38.009 +07:00 [INF] CORS policy execution successful.
+2026-05-29 15:16:38.010 +07:00 [INF] Executing endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:16:38.011 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.String, System.Nullable`1[System.Int32]) on controller Shop.API.Controllers.ProductsController (Shop.API).
+2026-05-29 15:16:38.014 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[Shop.Application.DTOs.Product.ProductDto, Shop.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-29 15:16:38.016 +07:00 [INF] Executed action Shop.API.Controllers.ProductsController.GetAll (Shop.API) in 3.4733ms
+2026-05-29 15:16:38.017 +07:00 [INF] Executed endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:16:38.018 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/api/products?page=1&pageSize=8&search= - null null
+2026-05-29 15:16:38.019 +07:00 [INF] HTTP GET /api/products responded 200 in 9.6467 ms
+2026-05-29 15:16:38.026 +07:00 [INF] CORS policy execution successful.
+2026-05-29 15:16:38.028 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/api/products?page=1&pageSize=8&search= - 200 null application/json; charset=utf-8 31.7893ms
+2026-05-29 15:16:38.029 +07:00 [INF] Executing endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:16:38.032 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.String, System.Nullable`1[System.Int32]) on controller Shop.API.Controllers.ProductsController (Shop.API).
+2026-05-29 15:16:38.048 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[Shop.Application.DTOs.Product.ProductDto, Shop.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-29 15:16:38.049 +07:00 [INF] Executed action Shop.API.Controllers.ProductsController.GetAll (Shop.API) in 15.8934ms
+2026-05-29 15:16:38.050 +07:00 [INF] Executed endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:16:38.051 +07:00 [INF] HTTP GET /api/products responded 200 in 25.0056 ms
+2026-05-29 15:16:38.053 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/api/products?page=1&pageSize=8&search= - 200 null application/json; charset=utf-8 34.8749ms
+2026-05-29 15:17:06.483 +07:00 [INF] Background service running at: "2026-05-29T08:17:06.4833521Z"
+2026-05-29 15:17:06.489 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:17:07.424 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7010/api/Upload - multipart/form-data; boundary=----WebKitFormBoundaryqrU5BpWkXAABKUOo 4626487
+2026-05-29 15:17:07.426 +07:00 [INF] CORS policy execution failed.
+2026-05-29 15:17:07.427 +07:00 [INF] Request origin https://localhost:7010 does not have permission to access the resource.
+2026-05-29 15:17:07.434 +07:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2026-05-29 15:17:07.438 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-05-29 15:17:07.439 +07:00 [INF] HTTP POST /api/Upload responded 401 in 12.5186 ms
+2026-05-29 15:17:07.440 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7010/api/Upload - 401 0 null 23.887ms
+2026-05-29 15:17:07.444 +07:00 [INF] Connection id "0HNLTB0B47DV7", Request id "0HNLTB0B47DV7:00000007": the application completed without reading the entire request body.
+2026-05-29 15:17:32.534 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/api/products?page=1&pageSize=8&search= - null null
+2026-05-29 15:17:32.541 +07:00 [INF] CORS policy execution successful.
+2026-05-29 15:17:32.542 +07:00 [INF] Executing endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:17:32.543 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.String, System.Nullable`1[System.Int32]) on controller Shop.API.Controllers.ProductsController (Shop.API).
+2026-05-29 15:17:32.546 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[Shop.Application.DTOs.Product.ProductDto, Shop.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-29 15:17:32.549 +07:00 [INF] Executed action Shop.API.Controllers.ProductsController.GetAll (Shop.API) in 2.9917ms
+2026-05-29 15:17:32.550 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/api/products?page=1&pageSize=8&search= - null null
+2026-05-29 15:17:32.550 +07:00 [INF] Executed endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:17:32.559 +07:00 [INF] CORS policy execution successful.
+2026-05-29 15:17:32.560 +07:00 [INF] HTTP GET /api/products responded 200 in 18.8447 ms
+2026-05-29 15:17:32.561 +07:00 [INF] Executing endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:17:32.562 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/api/products?page=1&pageSize=8&search= - 200 null application/json; charset=utf-8 28.3324ms
+2026-05-29 15:17:32.563 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.String, System.Nullable`1[System.Int32]) on controller Shop.API.Controllers.ProductsController (Shop.API).
+2026-05-29 15:17:32.568 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[Shop.Application.DTOs.Product.ProductDto, Shop.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-29 15:17:32.570 +07:00 [INF] Executed action Shop.API.Controllers.ProductsController.GetAll (Shop.API) in 2.26ms
+2026-05-29 15:17:32.571 +07:00 [INF] Executed endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:17:32.572 +07:00 [INF] HTTP GET /api/products responded 200 in 13.0736 ms
+2026-05-29 15:17:32.574 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/api/products?page=1&pageSize=8&search= - 200 null application/json; charset=utf-8 24.342ms
+2026-05-29 15:17:36.494 +07:00 [INF] Background service running at: "2026-05-29T08:17:36.4942777Z"
+2026-05-29 15:17:36.496 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:18:06.502 +07:00 [INF] Background service running at: "2026-05-29T08:18:06.5027385Z"
+2026-05-29 15:18:06.507 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:18:13.951 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7010/api/Auth/login - application/json 58
+2026-05-29 15:18:13.959 +07:00 [INF] CORS policy execution failed.
+2026-05-29 15:18:13.959 +07:00 [INF] Request origin https://localhost:7010 does not have permission to access the resource.
+2026-05-29 15:18:13.961 +07:00 [INF] Executing endpoint 'Shop.API.Controllers.AuthController.Login (Shop.API)'
+2026-05-29 15:18:13.962 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Shop.Application.DTOs.Auth.LoginDto) on controller Shop.API.Controllers.AuthController (Shop.API).
+2026-05-29 15:18:13.969 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@__dto_Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[FullName], [u].[PasswordHash], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-05-29 15:18:14.044 +07:00 [INF] Executed action Shop.API.Controllers.AuthController.Login (Shop.API) in 79.9932ms
+2026-05-29 15:18:14.046 +07:00 [INF] Executed endpoint 'Shop.API.Controllers.AuthController.Login (Shop.API)'
+2026-05-29 15:18:14.097 +07:00 [ERR] User not found
+System.Exception: User not found
+   at Shop.Infrastructure.Services.AuthService.LoginAsync(LoginDto dto) in E:\Study4w\E-Commerce_Api\src\Shop.Infrastructure\Services\AuthService.cs:line 70
+   at Shop.API.Controllers.AuthController.Login(LoginDto dto) in E:\Study4w\E-Commerce_Api\src\Shop.API\Controllers\AuthController.cs:line 33
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Shop.API.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in E:\Study4w\E-Commerce_Api\src\Shop.API\Middleware\ExceptionMiddleware.cs:line 26
+2026-05-29 15:18:14.152 +07:00 [ERR] HTTP POST /api/Auth/login responded 500 in 193.5243 ms
+2026-05-29 15:18:14.154 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7010/api/Auth/login - 500 null application/json 203.3763ms
+2026-05-29 15:18:23.214 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7010/api/Auth/login - application/json 57
+2026-05-29 15:18:23.217 +07:00 [INF] CORS policy execution failed.
+2026-05-29 15:18:23.217 +07:00 [INF] Request origin https://localhost:7010 does not have permission to access the resource.
+2026-05-29 15:18:23.220 +07:00 [INF] Executing endpoint 'Shop.API.Controllers.AuthController.Login (Shop.API)'
+2026-05-29 15:18:23.221 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Shop.Application.DTOs.Auth.LoginDto) on controller Shop.API.Controllers.AuthController (Shop.API).
+2026-05-29 15:18:23.228 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__dto_Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[FullName], [u].[PasswordHash], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-05-29 15:18:23.372 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2026-05-29 15:18:23.373 +07:00 [INF] Executed action Shop.API.Controllers.AuthController.Login (Shop.API) in 150.409ms
+2026-05-29 15:18:23.375 +07:00 [INF] Executed endpoint 'Shop.API.Controllers.AuthController.Login (Shop.API)'
+2026-05-29 15:18:23.376 +07:00 [INF] HTTP POST /api/Auth/login responded 200 in 159.2040 ms
+2026-05-29 15:18:23.377 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7010/api/Auth/login - 200 null text/plain; charset=utf-8 162.9485ms
+2026-05-29 15:18:36.505 +07:00 [INF] Background service running at: "2026-05-29T08:18:36.5055897Z"
+2026-05-29 15:18:36.508 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:23:55.014 +07:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-05-29 15:23:55.214 +07:00 [INF] User profile is available. Using 'C:\Users\Truong\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-29 15:23:55.234 +07:00 [INF] Background service running at: "2026-05-29T08:23:55.2302953Z"
+2026-05-29 15:23:55.295 +07:00 [WRN] The WebRootPath was not found: E:\Study4w\E-Commerce_Api\src\Shop.API\wwwroot. Static files may be unavailable.
+2026-05-29 15:23:55.392 +07:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:23:55.426 +07:00 [INF] Now listening on: https://localhost:7010
+2026-05-29 15:23:55.427 +07:00 [INF] Now listening on: http://localhost:5141
+2026-05-29 15:23:55.517 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-29 15:23:55.518 +07:00 [INF] Hosting environment: Development
+2026-05-29 15:23:55.519 +07:00 [INF] Content root path: E:\Study4w\E-Commerce_Api\src\Shop.API
+2026-05-29 15:23:55.792 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-29 15:23:55.792 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/_vs/browserLink - null null
+2026-05-29 15:23:55.824 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/_framework/aspnetcore-browser-refresh.js - 200 14921 application/javascript; charset=utf-8 40.2124ms
+2026-05-29 15:23:55.863 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/_vs/browserLink - 200 null text/javascript; charset=UTF-8 80.8157ms
+2026-05-29 15:23:56.067 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/swagger/v1/swagger.json - null null
+2026-05-29 15:23:56.116 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 48.5037ms
+2026-05-29 15:24:05.133 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/swagger/uploads - null null
+2026-05-29 15:24:05.262 +07:00 [INF] HTTP GET /swagger/uploads responded 404 in 49.8602 ms
+2026-05-29 15:24:05.267 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/swagger/uploads - 404 null null 133.6425ms
+2026-05-29 15:24:05.272 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7010/swagger/uploads, Response status code: 404
+2026-05-29 15:24:09.162 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/swagger/upload - null null
+2026-05-29 15:24:09.170 +07:00 [INF] HTTP GET /swagger/upload responded 404 in 1.1515 ms
+2026-05-29 15:24:09.172 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/swagger/upload - 404 null null 10.8393ms
+2026-05-29 15:24:09.176 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7010/swagger/upload, Response status code: 404
+2026-05-29 15:24:21.772 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/swagger/Uploads - null null
+2026-05-29 15:24:21.780 +07:00 [INF] HTTP GET /swagger/Uploads responded 404 in 1.9420 ms
+2026-05-29 15:24:21.782 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/swagger/Uploads - 404 null null 10.1185ms
+2026-05-29 15:24:21.786 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7010/swagger/Uploads, Response status code: 404
+2026-05-29 15:24:24.887 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-29 15:24:24.899 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/_framework/aspnetcore-browser-refresh.js - 200 14921 application/javascript; charset=utf-8 12.0359ms
+2026-05-29 15:24:25.146 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/swagger/v1/swagger.json - null null
+2026-05-29 15:24:25.157 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 11.9005ms
+2026-05-29 15:24:25.425 +07:00 [INF] Background service running at: "2026-05-29T08:24:25.4255919Z"
+2026-05-29 15:24:25.472 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:24:55.473 +07:00 [INF] Background service running at: "2026-05-29T08:24:55.4738027Z"
+2026-05-29 15:24:55.480 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:25:23.338 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/Uploads - null null
+2026-05-29 15:25:23.348 +07:00 [INF] HTTP GET /Uploads responded 404 in 0.1670 ms
+2026-05-29 15:25:23.349 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/Uploads - 404 null null 11.7804ms
+2026-05-29 15:25:23.353 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7010/Uploads, Response status code: 404
+2026-05-29 15:25:25.483 +07:00 [INF] Background service running at: "2026-05-29T08:25:25.4836140Z"
+2026-05-29 15:25:25.486 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:25:55.495 +07:00 [INF] Background service running at: "2026-05-29T08:25:55.4954976Z"
+2026-05-29 15:25:55.505 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:26:25.513 +07:00 [INF] Background service running at: "2026-05-29T08:26:25.5132583Z"
+2026-05-29 15:26:25.516 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:26:44.467 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/Uploads/Arty Huang (Arty亚缇) cosplay Bocchi - Bocchi The Rock (2).jpg - null null
+2026-05-29 15:26:44.482 +07:00 [INF] HTTP GET /Uploads/Arty Huang (Arty亚缇) cosplay Bocchi - Bocchi The Rock (2).jpg responded 404 in 0.6004 ms
+2026-05-29 15:26:44.484 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/Uploads/Arty Huang (Arty亚缇) cosplay Bocchi - Bocchi The Rock (2).jpg - 404 null null 22.1779ms
+2026-05-29 15:26:44.486 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7010/Uploads/Arty%20Huang%20(Arty%E4%BA%9A%E7%BC%87)%20cosplay%20Bocchi%20-%20Bocchi%20The%20Rock%20(2).jpg, Response status code: 404
+2026-05-29 15:26:50.469 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-29 15:26:50.485 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/_framework/aspnetcore-browser-refresh.js - 200 14921 application/javascript; charset=utf-8 16.2643ms
+2026-05-29 15:26:50.732 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/swagger/v1/swagger.json - null null
+2026-05-29 15:26:50.740 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 8.7331ms
+2026-05-29 15:26:55.516 +07:00 [INF] Background service running at: "2026-05-29T08:26:55.5165715Z"
+2026-05-29 15:26:55.522 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:27:10.645 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7010/api/Auth/login - application/json 57
+2026-05-29 15:27:10.653 +07:00 [INF] CORS policy execution failed.
+2026-05-29 15:27:10.655 +07:00 [INF] Request origin https://localhost:7010 does not have permission to access the resource.
+2026-05-29 15:27:10.659 +07:00 [INF] Executing endpoint 'Shop.API.Controllers.AuthController.Login (Shop.API)'
+2026-05-29 15:27:10.678 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Shop.Application.DTOs.Auth.LoginDto) on controller Shop.API.Controllers.AuthController (Shop.API).
+2026-05-29 15:27:10.754 +07:00 [INF] Executed DbCommand (16ms) [Parameters=[@__dto_Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[FullName], [u].[PasswordHash], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-05-29 15:27:11.107 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2026-05-29 15:27:11.115 +07:00 [INF] Executed action Shop.API.Controllers.AuthController.Login (Shop.API) in 432.1494ms
+2026-05-29 15:27:11.117 +07:00 [INF] Executed endpoint 'Shop.API.Controllers.AuthController.Login (Shop.API)'
+2026-05-29 15:27:11.119 +07:00 [INF] HTTP POST /api/Auth/login responded 200 in 467.8722 ms
+2026-05-29 15:27:11.123 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7010/api/Auth/login - 200 null text/plain; charset=utf-8 478.7114ms
+2026-05-29 15:27:25.524 +07:00 [INF] Background service running at: "2026-05-29T08:27:25.5244826Z"
+2026-05-29 15:27:25.527 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:27:42.090 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7010/api/Upload - multipart/form-data; boundary=----WebKitFormBoundaryC8Ic9uxu3FYopF2T 3980009
+2026-05-29 15:27:42.100 +07:00 [INF] CORS policy execution failed.
+2026-05-29 15:27:42.100 +07:00 [INF] Request origin https://localhost:7010 does not have permission to access the resource.
+2026-05-29 15:27:42.145 +07:00 [INF] Executing endpoint 'Shop.API.Controllers.UploadController.UploadImage (Shop.API)'
+2026-05-29 15:27:42.151 +07:00 [INF] Route matched with {action = "UploadImage", controller = "Upload"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UploadImage(Microsoft.AspNetCore.Http.IFormFile) on controller Shop.API.Controllers.UploadController (Shop.API).
+2026-05-29 15:27:42.291 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-29 15:27:42.297 +07:00 [INF] Executed action Shop.API.Controllers.UploadController.UploadImage (Shop.API) in 143.1049ms
+2026-05-29 15:27:42.299 +07:00 [INF] Executed endpoint 'Shop.API.Controllers.UploadController.UploadImage (Shop.API)'
+2026-05-29 15:27:42.300 +07:00 [INF] HTTP POST /api/Upload responded 200 in 200.4997 ms
+2026-05-29 15:27:42.302 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7010/api/Upload - 200 null application/json; charset=utf-8 213.0365ms
+2026-05-29 15:27:54.848 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/Uploads/44ebdab4-6a15-4ca6-a5fb-3547f66c38d4.jpg - null null
+2026-05-29 15:27:55.042 +07:00 [INF] Sending file. Request path: '/44ebdab4-6a15-4ca6-a5fb-3547f66c38d4.jpg'. Physical path: 'E:\Study4w\E-Commerce_Api\src\Shop.API\Uploads\44ebdab4-6a15-4ca6-a5fb-3547f66c38d4.jpg'
+2026-05-29 15:27:55.043 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/Uploads/44ebdab4-6a15-4ca6-a5fb-3547f66c38d4.jpg - 200 3979770 image/jpeg 195.9486ms
+2026-05-29 15:27:55.374 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/favicon.ico - null null
+2026-05-29 15:27:55.377 +07:00 [INF] HTTP GET /favicon.ico responded 404 in 0.1551 ms
+2026-05-29 15:27:55.378 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/favicon.ico - 404 0 null 4.0541ms
+2026-05-29 15:27:55.381 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7010/favicon.ico, Response status code: 404
+2026-05-29 15:27:55.578 +07:00 [INF] Background service running at: "2026-05-29T08:27:55.5780668Z"
+2026-05-29 15:27:55.582 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:28:25.598 +07:00 [INF] Background service running at: "2026-05-29T08:28:25.5985326Z"
+2026-05-29 15:28:25.601 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:28:55.605 +07:00 [INF] Background service running at: "2026-05-29T08:28:55.6056924Z"
+2026-05-29 15:28:55.615 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:29:25.619 +07:00 [INF] Background service running at: "2026-05-29T08:29:25.6191480Z"
+2026-05-29 15:29:25.625 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:29:41.968 +07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7010/api/auth/login - null null
+2026-05-29 15:29:41.975 +07:00 [INF] CORS policy execution successful.
+2026-05-29 15:29:41.976 +07:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 1.5522 ms
+2026-05-29 15:29:41.977 +07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7010/api/auth/login - 204 null null 9.1649ms
+2026-05-29 15:29:41.979 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7010/api/auth/login - application/json 48
+2026-05-29 15:29:41.981 +07:00 [INF] CORS policy execution successful.
+2026-05-29 15:29:41.981 +07:00 [INF] Executing endpoint 'Shop.API.Controllers.AuthController.Login (Shop.API)'
+2026-05-29 15:29:41.982 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Shop.Application.DTOs.Auth.LoginDto) on controller Shop.API.Controllers.AuthController (Shop.API).
+2026-05-29 15:29:41.988 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__dto_Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[FullName], [u].[PasswordHash], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-05-29 15:29:42.236 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2026-05-29 15:29:42.238 +07:00 [INF] Executed action Shop.API.Controllers.AuthController.Login (Shop.API) in 254.9522ms
+2026-05-29 15:29:42.239 +07:00 [INF] Executed endpoint 'Shop.API.Controllers.AuthController.Login (Shop.API)'
+2026-05-29 15:29:42.240 +07:00 [INF] HTTP POST /api/auth/login responded 200 in 259.1148 ms
+2026-05-29 15:29:42.241 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7010/api/auth/login - 200 null text/plain; charset=utf-8 262.389ms
+2026-05-29 15:29:47.450 +07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7010/api/auth/login - null null
+2026-05-29 15:29:47.453 +07:00 [INF] CORS policy execution successful.
+2026-05-29 15:29:47.454 +07:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 0.8943 ms
+2026-05-29 15:29:47.455 +07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7010/api/auth/login - 204 null null 4.7472ms
+2026-05-29 15:29:47.457 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7010/api/auth/login - application/json 48
+2026-05-29 15:29:47.460 +07:00 [INF] CORS policy execution successful.
+2026-05-29 15:29:47.461 +07:00 [INF] Executing endpoint 'Shop.API.Controllers.AuthController.Login (Shop.API)'
+2026-05-29 15:29:47.462 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Shop.Application.DTOs.Auth.LoginDto) on controller Shop.API.Controllers.AuthController (Shop.API).
+2026-05-29 15:29:47.466 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__dto_Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[FullName], [u].[PasswordHash], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2026-05-29 15:29:47.598 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2026-05-29 15:29:47.599 +07:00 [INF] Executed action Shop.API.Controllers.AuthController.Login (Shop.API) in 136.276ms
+2026-05-29 15:29:47.600 +07:00 [INF] Executed endpoint 'Shop.API.Controllers.AuthController.Login (Shop.API)'
+2026-05-29 15:29:47.601 +07:00 [INF] HTTP POST /api/auth/login responded 200 in 141.0904 ms
+2026-05-29 15:29:47.603 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7010/api/auth/login - 200 null text/plain; charset=utf-8 145.5811ms
+2026-05-29 15:29:49.468 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/api/products?page=1&pageSize=8&search= - null null
+2026-05-29 15:29:49.471 +07:00 [INF] CORS policy execution successful.
+2026-05-29 15:29:49.472 +07:00 [INF] Executing endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:29:49.478 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.String, System.Nullable`1[System.Int32]) on controller Shop.API.Controllers.ProductsController (Shop.API).
+2026-05-29 15:29:49.594 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+2026-05-29 15:29:49.601 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-05-29 15:29:49.602 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-05-29 15:29:49.608 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[Description], [p].[ImageUrl], [p].[Name], [p].[Price], [p].[Stock]
+FROM [Products] AS [p]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2026-05-29 15:29:49.638 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[Shop.Application.DTOs.Product.ProductDto, Shop.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-29 15:29:49.646 +07:00 [INF] Executed action Shop.API.Controllers.ProductsController.GetAll (Shop.API) in 166.7851ms
+2026-05-29 15:29:49.648 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/api/products?page=1&pageSize=8&search= - null null
+2026-05-29 15:29:49.648 +07:00 [INF] Executed endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:29:49.651 +07:00 [INF] CORS policy execution successful.
+2026-05-29 15:29:49.651 +07:00 [INF] HTTP GET /api/products responded 200 in 180.1394 ms
+2026-05-29 15:29:49.651 +07:00 [INF] Executing endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:29:49.652 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/api/products?page=1&pageSize=8&search= - 200 null application/json; charset=utf-8 183.9551ms
+2026-05-29 15:29:49.653 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.String, System.Nullable`1[System.Int32]) on controller Shop.API.Controllers.ProductsController (Shop.API).
+2026-05-29 15:29:49.657 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[Shop.Application.DTOs.Product.ProductDto, Shop.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-29 15:29:49.658 +07:00 [INF] Executed action Shop.API.Controllers.ProductsController.GetAll (Shop.API) in 2.0726ms
+2026-05-29 15:29:49.659 +07:00 [INF] Executed endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:29:49.659 +07:00 [INF] HTTP GET /api/products responded 200 in 8.7699 ms
+2026-05-29 15:29:49.660 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/api/products?page=1&pageSize=8&search= - 200 null application/json; charset=utf-8 12.2976ms
+2026-05-29 15:29:51.864 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/api/products?page=1&pageSize=8&search= - null null
+2026-05-29 15:29:51.866 +07:00 [INF] CORS policy execution successful.
+2026-05-29 15:29:51.867 +07:00 [INF] Executing endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:29:51.868 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.String, System.Nullable`1[System.Int32]) on controller Shop.API.Controllers.ProductsController (Shop.API).
+2026-05-29 15:29:51.872 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[Shop.Application.DTOs.Product.ProductDto, Shop.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-29 15:29:51.874 +07:00 [INF] Executed action Shop.API.Controllers.ProductsController.GetAll (Shop.API) in 3.7119ms
+2026-05-29 15:29:51.875 +07:00 [INF] Executed endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:29:51.876 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/api/products?page=1&pageSize=8&search= - null null
+2026-05-29 15:29:51.877 +07:00 [INF] HTTP GET /api/products responded 200 in 10.2065 ms
+2026-05-29 15:29:51.879 +07:00 [INF] CORS policy execution successful.
+2026-05-29 15:29:51.880 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/api/products?page=1&pageSize=8&search= - 200 null application/json; charset=utf-8 16.3451ms
+2026-05-29 15:29:51.881 +07:00 [INF] Executing endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:29:51.884 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.String, System.Nullable`1[System.Int32]) on controller Shop.API.Controllers.ProductsController (Shop.API).
+2026-05-29 15:29:51.886 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[Shop.Application.DTOs.Product.ProductDto, Shop.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-29 15:29:51.887 +07:00 [INF] Executed action Shop.API.Controllers.ProductsController.GetAll (Shop.API) in 1.9498ms
+2026-05-29 15:29:51.888 +07:00 [INF] Executed endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:29:51.889 +07:00 [INF] HTTP GET /api/products responded 200 in 10.1937 ms
+2026-05-29 15:29:51.891 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/api/products?page=1&pageSize=8&search= - 200 null application/json; charset=utf-8 15.3215ms
+2026-05-29 15:29:55.632 +07:00 [INF] Background service running at: "2026-05-29T08:29:55.6320576Z"
+2026-05-29 15:29:55.634 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:30:25.642 +07:00 [INF] Background service running at: "2026-05-29T08:30:25.6424240Z"
+2026-05-29 15:30:25.647 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:30:55.663 +07:00 [INF] Background service running at: "2026-05-29T08:30:55.6636120Z"
+2026-05-29 15:30:55.666 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:31:25.672 +07:00 [INF] Background service running at: "2026-05-29T08:31:25.6726544Z"
+2026-05-29 15:31:25.677 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:31:49.645 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7010/api/Products - application/json 196
+2026-05-29 15:31:49.653 +07:00 [INF] CORS policy execution failed.
+2026-05-29 15:31:49.654 +07:00 [INF] Request origin https://localhost:7010 does not have permission to access the resource.
+2026-05-29 15:31:49.658 +07:00 [INF] Executing endpoint 'Shop.API.Controllers.ProductsController.Create (Shop.API)'
+2026-05-29 15:31:49.664 +07:00 [INF] Route matched with {action = "Create", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Shop.Application.DTOs.Product.CreateProductDto) on controller Shop.API.Controllers.ProductsController (Shop.API).
+2026-05-29 15:31:49.794 +07:00 [INF] Executed DbCommand (13ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Products] ([CategoryId], [Description], [ImageUrl], [Name], [Price], [Stock])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-05-29 15:31:49.813 +07:00 [INF] Executing OkObjectResult, writing value of type 'Shop.Domain.Entities.Product'.
+2026-05-29 15:31:49.820 +07:00 [INF] Executed action Shop.API.Controllers.ProductsController.Create (Shop.API) in 154.9141ms
+2026-05-29 15:31:49.822 +07:00 [INF] Executed endpoint 'Shop.API.Controllers.ProductsController.Create (Shop.API)'
+2026-05-29 15:31:49.823 +07:00 [INF] HTTP POST /api/Products responded 200 in 170.0652 ms
+2026-05-29 15:31:49.825 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7010/api/Products - 200 null application/json; charset=utf-8 179.9029ms
+2026-05-29 15:31:55.676 +07:00 [INF] Background service running at: "2026-05-29T08:31:55.6769096Z"
+2026-05-29 15:31:55.679 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedAt], [o].[OrderDate], [o].[ShippingAddress], [o].[Status], [o].[TotalPrice], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Status] = N'Pending' AND [o].[CreatedAt] < DATEADD(minute, CAST(-30.0E0 AS int), GETUTCDATE())
+2026-05-29 15:31:58.947 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/api/products?page=1&pageSize=8&search= - null null
+2026-05-29 15:31:58.950 +07:00 [INF] CORS policy execution successful.
+2026-05-29 15:31:58.951 +07:00 [INF] Executing endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:31:58.952 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.String, System.Nullable`1[System.Int32]) on controller Shop.API.Controllers.ProductsController (Shop.API).
+2026-05-29 15:31:58.954 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[Shop.Application.DTOs.Product.ProductDto, Shop.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-29 15:31:58.956 +07:00 [INF] Executed action Shop.API.Controllers.ProductsController.GetAll (Shop.API) in 2.7194ms
+2026-05-29 15:31:58.958 +07:00 [INF] Executed endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:31:58.958 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/api/products?page=1&pageSize=8&search= - null null
+2026-05-29 15:31:58.968 +07:00 [INF] HTTP GET /api/products responded 200 in 17.8792 ms
+2026-05-29 15:31:58.971 +07:00 [INF] CORS policy execution successful.
+2026-05-29 15:31:58.973 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/api/products?page=1&pageSize=8&search= - 200 null application/json; charset=utf-8 26.3635ms
+2026-05-29 15:31:58.974 +07:00 [INF] Executing endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:31:58.978 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.String, System.Nullable`1[System.Int32]) on controller Shop.API.Controllers.ProductsController (Shop.API).
+2026-05-29 15:31:58.982 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[Shop.Application.DTOs.Product.ProductDto, Shop.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-29 15:31:58.983 +07:00 [INF] Executed action Shop.API.Controllers.ProductsController.GetAll (Shop.API) in 2.5867ms
+2026-05-29 15:31:58.984 +07:00 [INF] Executed endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:31:58.985 +07:00 [INF] HTTP GET /api/products responded 200 in 13.6262 ms
+2026-05-29 15:31:58.987 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/api/products?page=1&pageSize=8&search= - 200 null application/json; charset=utf-8 29.3916ms
+2026-05-29 15:32:04.054 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/api/products?page=1&pageSize=8&search= - null null
+2026-05-29 15:32:04.057 +07:00 [INF] CORS policy execution successful.
+2026-05-29 15:32:04.058 +07:00 [INF] Executing endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:32:04.059 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.String, System.Nullable`1[System.Int32]) on controller Shop.API.Controllers.ProductsController (Shop.API).
+2026-05-29 15:32:04.061 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[Shop.Application.DTOs.Product.ProductDto, Shop.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-29 15:32:04.063 +07:00 [INF] Executed action Shop.API.Controllers.ProductsController.GetAll (Shop.API) in 2.4731ms
+2026-05-29 15:32:04.064 +07:00 [INF] Executed endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:32:04.065 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/api/products?page=1&pageSize=8&search= - null null
+2026-05-29 15:32:04.070 +07:00 [INF] HTTP GET /api/products responded 200 in 10.0149 ms
+2026-05-29 15:32:04.078 +07:00 [INF] CORS policy execution successful.
+2026-05-29 15:32:04.079 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/api/products?page=1&pageSize=8&search= - 200 null application/json; charset=utf-8 24.6143ms
+2026-05-29 15:32:04.080 +07:00 [INF] Executing endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:32:04.084 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.String, System.Nullable`1[System.Int32]) on controller Shop.API.Controllers.ProductsController (Shop.API).
+2026-05-29 15:32:04.086 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[Shop.Application.DTOs.Product.ProductDto, Shop.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-29 15:32:04.088 +07:00 [INF] Executed action Shop.API.Controllers.ProductsController.GetAll (Shop.API) in 2.3868ms
+2026-05-29 15:32:04.089 +07:00 [INF] Executed endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:32:04.091 +07:00 [INF] HTTP GET /api/products responded 200 in 13.3858 ms
+2026-05-29 15:32:04.092 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/api/products?page=1&pageSize=8&search= - 200 null application/json; charset=utf-8 28.2937ms
+2026-05-29 15:32:15.649 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/api/products?page=1&pageSize=8&search= - null null
+2026-05-29 15:32:15.652 +07:00 [INF] CORS policy execution successful.
+2026-05-29 15:32:15.653 +07:00 [INF] Executing endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:32:15.654 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.String, System.Nullable`1[System.Int32]) on controller Shop.API.Controllers.ProductsController (Shop.API).
+2026-05-29 15:32:15.657 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[Shop.Application.DTOs.Product.ProductDto, Shop.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-29 15:32:15.660 +07:00 [INF] Executed action Shop.API.Controllers.ProductsController.GetAll (Shop.API) in 4.0303ms
+2026-05-29 15:32:15.661 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/api/products?page=1&pageSize=8&search= - null null
+2026-05-29 15:32:15.661 +07:00 [INF] Executed endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:32:15.666 +07:00 [INF] CORS policy execution successful.
+2026-05-29 15:32:15.667 +07:00 [INF] HTTP GET /api/products responded 200 in 15.1975 ms
+2026-05-29 15:32:15.668 +07:00 [INF] Executing endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:32:15.670 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/api/products?page=1&pageSize=8&search= - 200 null application/json; charset=utf-8 21.228ms
+2026-05-29 15:32:15.671 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.String, System.Nullable`1[System.Int32]) on controller Shop.API.Controllers.ProductsController (Shop.API).
+2026-05-29 15:32:15.677 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[Shop.Application.DTOs.Product.ProductDto, Shop.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-29 15:32:15.679 +07:00 [INF] Executed action Shop.API.Controllers.ProductsController.GetAll (Shop.API) in 2.7356ms
+2026-05-29 15:32:15.681 +07:00 [INF] Executed endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:32:15.682 +07:00 [INF] HTTP GET /api/products responded 200 in 15.7780 ms
+2026-05-29 15:32:15.684 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/api/products?page=1&pageSize=8&search= - 200 null application/json; charset=utf-8 23.1459ms
+2026-05-29 15:32:17.332 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/api/products?page=1&pageSize=8&search= - null null
+2026-05-29 15:32:17.335 +07:00 [INF] CORS policy execution successful.
+2026-05-29 15:32:17.335 +07:00 [INF] Executing endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:32:17.336 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.String, System.Nullable`1[System.Int32]) on controller Shop.API.Controllers.ProductsController (Shop.API).
+2026-05-29 15:32:17.338 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[Shop.Application.DTOs.Product.ProductDto, Shop.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-29 15:32:17.340 +07:00 [INF] Executed action Shop.API.Controllers.ProductsController.GetAll (Shop.API) in 2.6116ms
+2026-05-29 15:32:17.341 +07:00 [INF] Executed endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:32:17.342 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7010/api/products?page=1&pageSize=8&search= - null null
+2026-05-29 15:32:17.343 +07:00 [INF] HTTP GET /api/products responded 200 in 8.7511 ms
+2026-05-29 15:32:17.346 +07:00 [INF] CORS policy execution successful.
+2026-05-29 15:32:17.349 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/api/products?page=1&pageSize=8&search= - 200 null application/json; charset=utf-8 18.1434ms
+2026-05-29 15:32:17.350 +07:00 [INF] Executing endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:32:17.356 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.String, System.Nullable`1[System.Int32]) on controller Shop.API.Controllers.ProductsController (Shop.API).
+2026-05-29 15:32:17.359 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[Shop.Application.DTOs.Product.ProductDto, Shop.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-29 15:32:17.361 +07:00 [INF] Executed action Shop.API.Controllers.ProductsController.GetAll (Shop.API) in 2.603ms
+2026-05-29 15:32:17.362 +07:00 [INF] Executed endpoint 'Shop.API.Controllers.ProductsController.GetAll (Shop.API)'
+2026-05-29 15:32:17.363 +07:00 [INF] HTTP GET /api/products responded 200 in 16.7328 ms
+2026-05-29 15:32:17.365 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7010/api/products?page=1&pageSize=8&search= - 200 null application/json; charset=utf-8 23.3587ms

@@ -2,8 +2,10 @@ using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Serilog;
 using Shop.API.Middleware;
 using Shop.Application.Interfaces;
 using Shop.Application.Mappings;
@@ -13,7 +15,6 @@ using Shop.Infrastructure.Repositories;
 using Shop.Infrastructure.Services;
 using System.Diagnostics;
 using System.Text;
-using Serilog;
 
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Information()
@@ -145,13 +146,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-using (var scope = app.Services.CreateScope())
+app.UseStaticFiles(new StaticFileOptions
 {
-    var context = scope.ServiceProvider
-        .GetRequiredService<AppDbContext>();
-
-    await SeedData.InitializeAsync(context);
-}
+    FileProvider = new PhysicalFileProvider(
+        Path.Combine(
+            Directory.GetCurrentDirectory(),
+            "Uploads")),
+    RequestPath = "/Uploads"
+});
 
 app.UseSerilogRequestLogging();
 
